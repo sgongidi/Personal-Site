@@ -8,7 +8,7 @@ const Footer = () => {
             <Card>
                 <Card.Body>
                     <Card.Text>
-                        Created by Sai Gongidi
+                        Created by Sai Gongidi. Copyright &copy; 2020
                     </Card.Text>
                 </Card.Body>
             </Card>

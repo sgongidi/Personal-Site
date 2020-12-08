@@ -9,7 +9,7 @@ const Contact = () => {
                 <Card.Body>
                     <Card.Title>Contact me!</Card.Title>
                     <Card.Text>
-                        saigongidi@gmail.com
+                        contact@saigongidi.com
                     </Card.Text>
                     <ButtonGroup>
                         <Button variant="dark" href="https://github.com/sgongidi" target="_blank" rel="noopener noreferrer">Github Profile</Button>

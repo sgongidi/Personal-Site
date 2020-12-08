@@ -10,6 +10,9 @@ const Home = () => {
                     <Card.Title>
                         Welcome to my personal website!
                     </Card.Title>
+                    <Card.Text>
+                        This site is in progress. Full site coming soon.
+                    </Card.Text>
                 </Card.Body>
             </Card>
         </div>
