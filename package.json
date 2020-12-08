@@ -14,10 +14,10 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "init": "npm i && firebase login",
+    "init": "npm ci && firebase login",
     "start": "react-scripts start",
-    "serve": "react-scripts build && firebase serve",
-    "deploy": "react-scripts build && firebase deploy"
+    "build": "react-scripts build",
+    "serve": "react-scripts build && firebase serve"
   },
   "eslintConfig": {
     "extends": "react-app"
