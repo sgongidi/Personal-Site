@@ -59,7 +59,7 @@ const Projects = () => {
             <ButtonGroup>
               <Button
                 variant="dark"
-                href="https://team-2-5c2d9.web.app/"
+                href="https://danddbros.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
