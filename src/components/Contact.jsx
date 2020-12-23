@@ -1,24 +1,20 @@
-import React from 'react';
-import { Card, ButtonGroup, Button } from 'react-bootstrap';
-import '../css/Contact.css';
+import React, { Fragment } from "react";
+import { Card } from "react-bootstrap";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
-    return (
-        <div id="contact">
-            <Card>
-                <Card.Body>
-                    <Card.Title>Contact me!</Card.Title>
-                    <Card.Text>
-                        contact@saigongidi.com
-                    </Card.Text>
-                    <ButtonGroup>
-                        <Button variant="dark" href="https://github.com/sgongidi" target="_blank" rel="noopener noreferrer">Github Profile</Button>
-                        <Button variant="dark" href="https://www.linkedin.com/in/sai-gongidi/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</Button>
-                    </ButtonGroup>
-                </Card.Body>
-            </Card>
-        </div>
-    );
-}
+  return (
+    <Fragment id="contact">
+      <Card bg="dark" text="light">
+        <Card.Body>
+          <Card.Title>Contact me!</Card.Title>
+          <Card.Text>Email: me@saigongidi.com</Card.Text>
+          <Card.Text>I'm interested in freelance web development opportunities. Use the form below to tell me about your idea and I'll get in touch as soon as possible!</Card.Text>
+          <ContactForm />
+        </Card.Body>
+      </Card>
+    </Fragment>
+  );
+};
 
 export default Contact;

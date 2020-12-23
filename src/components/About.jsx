@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Card } from 'react-bootstrap';
-// import '../css/about.css';
 
 const About = () => {
     return (
-        <div id="about">
-            <Card>
+        <Fragment id="about">
+            <Card bg="dark" text="light">
                 <Card.Body>
                     <Card.Title>About me</Card.Title>
                     <Card.Text>
@@ -13,7 +12,7 @@ const About = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        </div>
+        </Fragment>
     );
 }
 
