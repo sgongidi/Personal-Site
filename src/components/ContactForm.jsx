@@ -37,7 +37,7 @@ const ContactForm = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </Form.Group>
-        <Button disabled variant="primary" type="submit">
+        <Button disabled variant="light" type="submit">
           Submit
         </Button>
       </Form>

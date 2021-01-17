@@ -15,7 +15,7 @@ const Home = () => {
         <Card.Footer>
           <ButtonGroup>
             <Button
-              variant="primary"
+              variant="light"
               href="https://github.com/sgongidi"
               target="_blank"
               rel="noopener noreferrer"
@@ -27,7 +27,7 @@ const Home = () => {
               Github Profile
             </Button>
             <Button
-              variant="primary"
+              variant="light"
               href="https://www.linkedin.com/in/sai-gongidi/"
               target="_blank"
               rel="noopener noreferrer"
