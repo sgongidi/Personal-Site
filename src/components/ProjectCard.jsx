@@ -1,9 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 import { Card, Button, ButtonGroup } from "react-bootstrap";
+
+const StyledCard = styled(Card)`
+  cursor: pointer;
+  // &:hover {
+  // }
+`;
 
 const ProjectCard = ({ title, text, github, link }) => {
   return (
-    <Card border="primary" bg="dark" text="light">
+    <StyledCard border="primary" bg="dark" text="light">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
@@ -34,7 +41,7 @@ const ProjectCard = ({ title, text, github, link }) => {
           ) : null}
         </ButtonGroup>
       </Card.Footer>
-    </Card>
+    </StyledCard>
   );
 };
 

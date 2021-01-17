@@ -10,8 +10,8 @@ import Navigationbar from "./Navigationbar";
 
 const App = () => {
   return (
-    <Fragment className="App">
-      <Container>
+    <Fragment>
+      <Container id="app">
           <Navigationbar />
           <Switch>
             <Route exact path="/" component={Home} />

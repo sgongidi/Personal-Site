@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { Card, Button, ButtonGroup } from "react-bootstrap";
+import React from "react";
+import { Container, Card, Button, ButtonGroup } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <Fragment id="home">
+    <Container id="home">
       <Card bg="dark" text="light">
         <Card.Body>
           <Card.Title>Welcome to my personal website!</Card.Title>
@@ -20,7 +20,11 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-github-square" style={{"font-size": "1.5em"}}></i> Github Profile
+              <i
+                className="fab fa-github-square"
+                style={{ "fontSize": "1.5em" }}
+              ></i>{" "}
+              Github Profile
             </Button>
             <Button
               variant="primary"
@@ -28,12 +32,13 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fab fa-linkedin" style={{"font-size": "1.5em"}}></i> LinkedIn Profile
+              <i className="fab fa-linkedin" style={{ "fontSize": "1.5em" }}></i>{" "}
+              LinkedIn Profile
             </Button>
           </ButtonGroup>
         </Card.Footer>
       </Card>
-    </Fragment>
+    </Container>
   );
 };
 
