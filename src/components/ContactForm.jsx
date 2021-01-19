@@ -10,8 +10,8 @@ const ContactForm = () => {
     // console.log(email, message);
     axios({
       method: "post",
-      baseURL: "http://localhost:5001/personal-site-fda9e/us-central1",
-      // baseURL: "https://us-central1-personal-site-fda9e.cloudfunctions.net",
+      // baseURL: "http://localhost:5001/personal-site-fda9e/us-central1",
+      baseURL: "https://us-central1-personal-site-fda9e.cloudfunctions.net",
       url: "/sendEmail",
       data: {
         email: email,
