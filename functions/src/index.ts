@@ -1,18 +1,30 @@
 import { https } from "firebase-functions";
-import * as admin from "firebase-admin";
+const authCred = require("authCred.json");
+const mailer = require("nodemailer");
+const cors = require("cors")({ origin: true });
 
-
-const config = {};
-admin.initializeApp(config);
-const db = admin.firestore()
-
-export const helloWorld = https.onCall(async (data) => {
-  const email = data.email;
-  const message = data.message;
-  if(!email || !message) {
-    return "Error"
-  }
-
-  const setdb = await db.collection("messages").doc("F8SHiTTjkDUZ55VDqbir").set({email: message});
-  return setdb;
+export const sendEmail = https.onRequest((req, res) => {
+  cors(req, res, () => {
+    // console.log(req.body);
+    mailer
+      .createTransport({
+        host: "smtp.mailgun.org",
+        port: 465,
+        secure: true,
+        auth: authCred,
+      })
+      .sendMail({
+        from: "personal@saigongidi.com", // sender address
+        to: "website@saigongidi.com", // list of receivers
+        subject: "Message from saigongidi.com", // Subject line
+        html: `<p>Email: ${req.body.email}<p><br /><p>Message: ${req.body.message}</p>`, // html body
+      })
+      .then(() => {
+        res.status(200).send("Success");
+      })
+      .catch((err: any) => {
+        // console.log(err);
+        res.status(500).send(err);
+      });
+  });
 });

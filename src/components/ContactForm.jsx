@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-import app from "../firebase";
 import { Container, Form, Button } from "react-bootstrap";
 
 const ContactForm = () => {
+  const axios = require("axios");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const submitForm = (e) => {
     e.preventDefault();
-    const myfunction = app.functions().httpsCallable("helloWorld");
-    myfunction({ email: email, message: message })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.error(err));
+    // console.log(email, message);
+    axios({
+      method: "post",
+      baseURL: "http://localhost:5001/personal-site-fda9e/us-central1",
+      // baseURL: "https://us-central1-personal-site-fda9e.cloudfunctions.net",
+      url: "/sendEmail",
+      data: {
+        email: email,
+        message: message,
+      },
+    }).then(res => alert(`Message sent! I'll get in touch with you soon at ${email}`))
+      .catch(err => console.error(err));
   };
 
   return (
@@ -37,7 +45,7 @@ const ContactForm = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </Form.Group>
-        <Button disabled variant="light" type="submit">
+        <Button variant="light" type="submit">
           Submit
         </Button>
       </Form>
