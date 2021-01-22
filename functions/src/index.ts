@@ -1,30 +1,36 @@
 import { https } from "firebase-functions";
-const authCred = require("authCred.json");
-const mailer = require("nodemailer");
+import mailer from "nodemailer";
+import authCred from "./authCred.json";
 const cors = require("cors")({ origin: true });
 
-export const sendEmail = https.onRequest((req, res) => {
-  cors(req, res, () => {
+export const sendFormEmail = https.onRequest((req, res) => {
+  cors(req, res, async () => {
     // console.log(req.body);
-    mailer
-      .createTransport({
-        host: "smtp.mailgun.org",
-        port: 465,
-        secure: true,
-        auth: authCred,
-      })
-      .sendMail({
-        from: "personal@saigongidi.com", // sender address
-        to: "website@saigongidi.com", // list of receivers
-        subject: "Message from saigongidi.com", // Subject line
-        html: `<p>Email: ${req.body.email}<p><br /><p>Message: ${req.body.message}</p>`, // html body
-      })
-      .then(() => {
-        res.status(200).send("Success");
-      })
-      .catch((err: any) => {
-        // console.log(err);
-        res.status(500).send(err);
-      });
+    const { name, email, message, destEmail } = req.body;
+    if (!name || !email || !message || !destEmail) {
+      res.status(400)
+        .send("Error: Must send a name, email, message, and destination email!");
+    } else {
+      mailer
+        .createTransport({
+          host: "smtp.mailgun.org",
+          port: 465,
+          secure: true,
+          auth: authCred,
+        })
+        .sendMail({
+          from: "emailbot@saigongidi.com", // sender address
+          to: `${destEmail}`, // receiver address
+          subject: `${name} sent a message from ${destEmail.split("@")[1]}`, // Subject line
+          html: `<p>Name: ${name}<br />Email: ${email}<br />Message: ${message}</p>`, // html body
+        })
+        .then(() => {
+          res.status(200).send("Success");
+        })
+        .catch((err) => {
+          res.status(400).send(err);
+        });
+    }
+    return;
   });
 });

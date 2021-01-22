@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <Card id="contact" bg="dark" text="light">
+    <Card id="contact" bg="dark" text="light" style={{ "margin-bottom": "15vh" }}>
       <Card.Body>
         <Card.Title>Contact me!</Card.Title>
         <Card.Text>Email: me@saigongidi.com</Card.Text>
