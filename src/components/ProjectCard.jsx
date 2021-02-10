@@ -5,15 +5,20 @@ import { Card, Button, ButtonGroup } from "react-bootstrap";
 const StyledCard = styled(Card)`
   cursor: pointer;
   // &:hover {
+  //   .subtitle {
+      
+  //   }
   // }
 `;
 
-const ProjectCard = ({ title, text, github, link }) => {
+const ProjectCard = ({ title, tools, text, github, link }) => {
   return (
-    <StyledCard border="primary" bg="dark" text="light">
+    <StyledCard bg="dark" text="light">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
+        
         <Card.Text>{text}</Card.Text>
+        <Card.Subtitle hidden><b>Languages and Tools:</b><br /> {tools}</Card.Subtitle>
       </Card.Body>
       <Card.Footer>
         <ButtonGroup>
@@ -25,7 +30,7 @@ const ProjectCard = ({ title, text, github, link }) => {
           >
             <i
               className="fab fa-github-square"
-              style={{ "font-size": "1.5em" }}
+              style={{ "fontSize": "1.5em" }}
             ></i>{" "}
             Github
           </Button>

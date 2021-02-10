@@ -3,7 +3,7 @@ import { Container, Card, Button, ButtonGroup } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <Container id="home">
+    <Container id="home" style={{ "marginBottom": "30vh" }}>
       <Card bg="dark" text="light">
         <Card.Body>
           <Card.Title>Welcome to my personal website!</Card.Title>
