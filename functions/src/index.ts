@@ -1,8 +1,12 @@
 import { https } from "firebase-functions";
 import mailer from "nodemailer";
-import authCred from "./authCred.json";
 const cors = require("cors")({ origin: true });
 
+// SMTP Credentials: {"user": "sender@email.com", "pass": "PASSWORD"}
+import authCred from "./authCred.json";
+
+// API function to send an email with info from contact form
+// Request body must include name, email, message, and destination email
 export const sendFormEmail = https.onRequest((req, res) => {
   cors(req, res, async () => {
     // console.log(req.body);
@@ -19,7 +23,7 @@ export const sendFormEmail = https.onRequest((req, res) => {
           auth: authCred,
         })
         .sendMail({
-          from: "emailbot@saigongidi.com", // sender address
+          from: `${authCred.user}`, // sender address
           to: `${destEmail}`, // receiver address
           subject: `${name} sent a message from ${destEmail.split("@")[1]}`, // Subject line
           html: `<p>Name: ${name}<br />Email: ${email}<br />Message: ${message}</p>`, // html body

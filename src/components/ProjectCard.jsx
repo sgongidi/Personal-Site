@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Card, Button, ButtonGroup } from "react-bootstrap";
 
@@ -12,13 +12,15 @@ const StyledCard = styled(Card)`
 `;
 
 const ProjectCard = ({ title, tools, text, github, link }) => {
+  const [toggle, toggleText] = useState(false);
+  const onClick = () => toggleText(!toggle);
   return (
-    <StyledCard bg="dark" text="light">
+    <StyledCard bg="dark" text="light" onClick={onClick}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        
-        <Card.Text>{text}</Card.Text>
-        <Card.Subtitle hidden><b>Languages and Tools:</b><br /> {tools}</Card.Subtitle>
+        { toggle ? <Card.Text>{text}</Card.Text> : null }
+        <Card.Subtitle>Languages and Frameworks:</Card.Subtitle>
+        <Card.Text>{tools}</Card.Text>
       </Card.Body>
       <Card.Footer>
         <ButtonGroup>

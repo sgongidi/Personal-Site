@@ -16,10 +16,7 @@ const Projects = () => {
         <ProjectCard
           title="UNC CS Resumé Database"
           tools="HTML, CSS, Javascript, React.JS, Firebase, Node.JS, Bootstrap"
-          text="The UNC Computer Science Department created the UNC Summer of Code 
-          2020 program to provide a remote internship-like experience for students 
-          who have experienced difficulty securing a summer internship as a result 
-          of the COVID-19 pandemic. Students' resumés are available to recruiters 
+          text="Project for UNC Summer of Code 2020. Students' resumés are available to recruiters 
           from department sponsors via PDF and Handshake, however they need to manually 
           search through these lists for potential candidates. In order to solve this 
           problem, we created a dynamic CS-oriented resumé database website on the 
@@ -31,8 +28,8 @@ const Projects = () => {
           link="https://resumedatabase.cs.unc.edu"
         />
         <ProjectCard 
-          title="Web Dev Carolina Website"
-          tools="MEAN Stack, Firebase"
+          title="Web Dev Carolina Website (In progress)"
+          tools="MEAN Stack, Firebase, Bootstrap"
           text="The main website for Web Dev Carolina. Used to showcase the
           club's work and connect with new members and clients. "
           github="https://github.com/web-dev-carolina/club-site"
@@ -49,22 +46,23 @@ const Projects = () => {
           link="https://danddbros.com"
         />
         <ProjectCard
-          title="Personal Site"
+          title="Personal Site (In progress)"
           tools="Typescript, React.JS, CSS, Firebase, Node.JS, Bootstrap"
           text="A Progressive Web App that I use to showcase my work and 
           link to my online profiles."
           github="https://github.com/sgongidi/Personal-Site"
         />
         <ProjectCard
-          title="Local Blockchain"
-          tools="Python"
-          text="A simple Blockchain with proof of work system to show how 
-          Blockchain-based cryptocurrencies like Bitcoin work."
-          github="https://github.com/sgongidi/Local-Blockchain"
+          title="Waitr"
+          tools="HTML, CSS, Node.JS, Bulma"
+          text="Final project for COMP 426- Modern Web Programming. Created a 
+          full stack web app for restaurants to queue incoming customers and 
+          notify them when a table is ready"
+          github="https://github.com/sgongidi/waitr"
         />
         <ProjectCard
-          title="Study Buddy"
-          tools="React"
+          title="Study Buddy (In Progress)"
+          tools="React, TBD"
           text="Semester long group project for COMP 523- Software Engineering Lab. 
           Study buddy aims to remove the early semester awkwardness 
           that comes along with searching for study partners. This Web App 
@@ -75,13 +73,18 @@ const Projects = () => {
           github="https://github.com/sgongidi/"
           link="https://tarheels.live/523teamc/"
         />
+        <ProjectCard 
+          title="MERN Stack Template"
+          tools="MERN Stack, Firebase"
+          text="A generic MERN Stack web app for Web Dev Carolina's headless CMS."
+          github="https://github.com/web-dev-carolina/React-template"
+        />
         <ProjectCard
-          title="Waitr"
-          tools="HTML, CSS, Node.JS, Bulma"
-          text="Final project for COMP 426- Modern Web Programming. Created a 
-          full stack web app for restaurants to queue incoming customers and 
-          notify them when a table is ready"
-          github="https://github.com/sgongidi/waitr"
+          title="Local Blockchain"
+          tools="Python"
+          text="A simple Blockchain with proof of work system to show how 
+          Blockchain-based cryptocurrencies like Bitcoin work."
+          github="https://github.com/sgongidi/Local-Blockchain"
         />
       </CardColumns>
     </Container>
