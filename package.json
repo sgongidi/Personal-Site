@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "bootstrap-switch-button-react": "^1.2.0",
     "firebase": "^8.2.6",
     "firebase-functions": "^3.13.1",
     "react": "^16.14.0",

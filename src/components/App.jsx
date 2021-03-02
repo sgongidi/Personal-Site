@@ -5,6 +5,7 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Projects from "./Projects";
+import Plex from "./Plex";
 import Footer from "./Footer";
 import Navigationbar from "./Navigationbar";
 
@@ -18,6 +19,7 @@ const App = () => {
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/projects" component={Projects} />
+            <Route exact path="/plex" component={Plex} />
           </Switch>
       </Container>
       <Footer />
