@@ -31,8 +31,8 @@ export const sendFormEmail = https.onRequest((req, res) => {
       res.status(400)
         .send("Error: Must send a name, email, message, and destination email!");
     } else {
-      let subject = `${name} sent a message from ${destEmail.split("@")[1]}`;
-      let body = `<p>Name: ${name}<br />Email: ${email}<br />Message: ${message}</p>`;
+      const subject = `${name} sent a message from ${destEmail.split("@")[1]}`;
+      const body = `<p>Name: ${name}<br />Email: ${email}<br />Message: ${message}</p>`;
 
       sendEmail(destEmail, subject, body)
         .then(() => {
@@ -57,7 +57,7 @@ export const sendPlexForm = https.onRequest((req, res) => {
     } else {
       let items =  ``;
       list.forEach(item => {
-        let itembody = `<ul>
+        const itembody = `<ul>
                         <li><h2>Title:</h2> ${item.title}</li>
                         <li><h2>Year:</h2> ${item.year === "" ? "N/A" : item.year}</li>
                         <li><h2>TV Show?:</h2> ${item.isShow}</li>
@@ -65,9 +65,9 @@ export const sendPlexForm = https.onRequest((req, res) => {
         items = items.concat(itembody);
       });
 
-      let destination = "plex@saigongidi.com";
-      let subject = `${name} has sent a request for Plex`;
-      let body = `<p>
+      const destination = "plex@saigongidi.com";
+      const subject = `${name} has sent a request for Plex`;
+      const body = `<p>
                     <h1>List:</h1><br /> 
                     ${items}
                   </p>`;
@@ -91,9 +91,9 @@ export const sendPlexSignup = https.onRequest((req, res) => {
     if (!name || !email) {
       res.status(400).send("Error: Must send a name and email!");
     } else {
-      let destination = "plex@saigongidi.com";
-      let subject = `${name} has sent a Plex signup request`;
-      let body = `Email: ${email}`;
+      const destination = "plex@saigongidi.com";
+      const subject = `${name} has sent a Plex signup request`;
+      const body = `Email: ${email}`;
       sendEmail(destination, subject, body)
         .then(() => {
           res.status(200).send("Success");

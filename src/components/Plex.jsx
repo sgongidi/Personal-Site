@@ -6,7 +6,7 @@ import SignupForm from "./SignupForm";
 const Plex = () => {
   return (
     <Container>
-      <Card id="contact" bg="dark" text="light">
+      <Card id="contact" bg="dark" text="light" style={{"marginBottom": "10vh"}}>
         <Card.Body>
           <Button
             style={{ "marginBottom": "2vh", "marginLeft": "4vw" }}
@@ -18,10 +18,10 @@ const Plex = () => {
             Go to Plex
           </Button>
           <Row>
-            <Col>
+            <Col md>
               <PlexForm />
             </Col>
-            <Col>
+            <Col md>
               <SignupForm />
             </Col>
           </Row>
