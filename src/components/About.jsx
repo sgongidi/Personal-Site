@@ -9,9 +9,8 @@ const About = () => {
       <Card.Body>
         <Card.Title>About me</Card.Title>
         <Card.Text>
-          I am a senior at UNC Chapel Hill, graduating in May 2021 with a
-          Bachelor of Arts in Computer Science and Cognitive Science minor. I am 
-          actively seeking a post-graduation career in software engineering.
+          I recently graduated from UNC Chapel Hill with a
+          Bachelor of Arts in Computer Science and Cognitive Science minor. 
         </Card.Text>
         <Experience />
         <Courses />

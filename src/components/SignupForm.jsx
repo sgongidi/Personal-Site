@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Button, Form, Card, Container, Col } from "react-bootstrap";
+import { Button, Form, Card, Container, Col, Spinner } from "react-bootstrap";
 import * as axios from "axios";
 
 const SignupForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(null);
 
-  const submitForm = (e) => {
+  const submitForm = e => {
     e.preventDefault();
     if (!name) return alert("Please enter your name");
     if (!email) return alert("Please enter your email");
 
     // console.log(name, email);
+    setLoading(true);
     axios({
       method: "post",
     //   baseURL: "http://localhost:5001/personal-site-fda9e/us-central1",
@@ -22,10 +24,11 @@ const SignupForm = () => {
         email: email,
       },
     })
-      .then((res) =>
-        alert(`Signup request sent!`)
-      )
-      .catch((err) => console.error(err));
+      .then(res => {
+        alert(`Signup request sent!`);
+        setLoading(false);
+      })
+      .catch(err => console.error(err));
   };
 
   return (
@@ -53,9 +56,9 @@ const SignupForm = () => {
               />
             </Form.Group>
           </Form.Row>
-          <Button id="submitSignup" variant="info" type="submit">
+          {loading ? <Spinner animation="border" variant="info" /> : <Button id="submitSignup" variant="info" type="submit">
             Submit
-          </Button>
+          </Button>}
         </Form.Group>
       </Form>
     </Container>

@@ -56,7 +56,7 @@ const Experience = () => {
                             <Subtitle>Web Dev Carolina</Subtitle>
                         </Col>
                         <Col>
-                            <Subtitle>August 2020 - Present</Subtitle>
+                            <Subtitle>August 2020 - May 2021</Subtitle>
                         </Col>
                     </StyledRow>
                     <Row>

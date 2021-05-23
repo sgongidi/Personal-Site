@@ -7,10 +7,10 @@ const Home = () => {
       <Card bg="dark" text="light">
         <Card.Body>
           <Card.Title>Welcome to my personal website!</Card.Title>
-          <Card.Text>
+          {/* <Card.Text>
             This site is currently in progress. Come back soon to see the
             finished website.
-          </Card.Text>
+          </Card.Text> */}
         </Card.Body>
         <Card.Footer>
           <ButtonGroup>

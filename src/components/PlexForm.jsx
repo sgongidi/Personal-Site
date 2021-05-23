@@ -6,6 +6,7 @@ import {
   ButtonGroup,
   Col,
   Card,
+  Spinner
 } from "react-bootstrap";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import * as axios from "axios";
@@ -15,10 +16,11 @@ const PlexForm = () => {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [isTVShow, setIsTVShow] = useState(false);
+  const [loading, setLoading] = useState(null);
   // const [list, setList] = useState([]);
   // [{title: "Avengers", year: "", isShow: false}]
 
-  const submitForm = (e) => {
+  const submitForm = e => {
     e.preventDefault();
     if (!name) return alert("Please enter your name");
     if (!title) return alert("Please add a title"); // && !list
@@ -28,20 +30,13 @@ const PlexForm = () => {
 
     // console.log(name, title, year, isTVShow ? "TV Show" : "Movie");
     let list = [{title: title, year: year, isShow: isTVShow}];
-    axios({
-      method: "post",
-      // baseURL: "http://localhost:5001/personal-site-fda9e/us-central1",
-      baseURL: "https://us-central1-personal-site-fda9e.cloudfunctions.net",
-      url: "/sendPlexForm",
-      data: {
-        name: name,
-        list: list,
-      },
-    })
-      .then((res) =>
-        alert(`Plex request sent!`)
-      )
-      .catch((err) => console.error(err));
+    setLoading(true);
+    axios.post("https://us-central1-personal-site-fda9e.cloudfunctions.net/sendPlexForm", {name: name, list: list})
+      .then(res => {
+        alert(`Plex request sent!`);
+        setLoading(false);
+      })
+      .catch(err => console.error(err));
   };
 
   // const handleAddAnother = (e) => {
@@ -105,6 +100,7 @@ const PlexForm = () => {
             </Form.Group>
           </Form.Row>
           <Form.Row style={{ marginBottom: "3vh" }}>
+            {/* <Form.Check type="switch" id="tv show" label="TV Show?" onChange={() => {setIsTVShow(!isTVShow); console.log(isTVShow);}} /> */}
             <BootstrapSwitchButton
               width={100}
               checked={isTVShow}
@@ -120,9 +116,9 @@ const PlexForm = () => {
               {/* <Button variant="light" onClick={handleAddAnother}>
                     Add another
                   </Button> */}
-              <Button variant="info" type="submit">
+              {loading ? <Spinner animation="border" variant="info" /> : <Button variant="info" type="submit">
                 Submit
-              </Button>
+              </Button>}
             </ButtonGroup>
           </Form.Row>
         </Form.Group>

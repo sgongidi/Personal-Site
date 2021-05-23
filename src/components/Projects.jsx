@@ -28,7 +28,7 @@ const Projects = () => {
           link="https://resumedatabase.cs.unc.edu"
         />
         <ProjectCard 
-          title="Web Dev Carolina Website (In progress)"
+          title="Web Dev Carolina Website"
           tools="MEAN Stack, Firebase, Bootstrap"
           text="The main website for Web Dev Carolina. Used to showcase the
           club's work and connect with new members and clients. "
@@ -46,7 +46,7 @@ const Projects = () => {
           link="https://danddbros.com"
         />
         <ProjectCard
-          title="Personal Site (In progress)"
+          title="Personal Site"
           tools="Typescript, React.JS, CSS, Firebase, Node.JS, Bootstrap"
           text="A Progressive Web App that I use to showcase my work and 
           link to my online profiles."
@@ -61,22 +61,22 @@ const Projects = () => {
           github="https://github.com/sgongidi/waitr"
         />
         <ProjectCard
-          title="Study Buddy (In Progress)"
-          tools="React, TBD"
-          text="Semester long group project for COMP 523- Software Engineering Lab. 
+          title="Study Buddy"
+          tools="MERN Stack, Firebase, Bootstrap"
+          text="Semester-long group project for COMP 523- Software Engineering Lab. 
           Study buddy aims to remove the early semester awkwardness 
           that comes along with searching for study partners. This Web App 
-          will allow students to enter their class schedule to match them 
-          with other potential students. From there, users can create a profile 
+          allows students to enter their class schedule to match them 
+          with other students. From there, users can create a profile 
           and take a short survey to narrow down the list of potential partners 
-          so that they can find the right match."
-          github="https://github.com/sgongidi/"
-          link="https://tarheels.live/523teamc/"
+          so that they can find their ideal study partner."
+          github="https://github.com/Jemeline/study-buddy"
+          link="https://study-buddy-d452c.web.app/"
         />
         <ProjectCard 
-          title="MERN Stack Template"
-          tools="MERN Stack, Firebase"
-          text="A generic MERN Stack web app for Web Dev Carolina's headless CMS."
+          title="React Template"
+          tools="React"
+          text="A generic React web app for Web Dev Carolina's headless CMS."
           github="https://github.com/web-dev-carolina/React-template"
         />
         <ProjectCard
